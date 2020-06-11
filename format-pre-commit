@@ -1,4 +1,4 @@
 #!/bin/bash
 formatter=black
 target_extension="py"
-git diff --cached --name-status | cat | sed '/^D/d' | awk '{print $NF}'| grep ".$target_extension" | xargs -L1 $formatter
+git diff --cached --name-status | cat | sed '/^D/d' | awk '{print $NF}'| grep ".$target_extension" | xargs -L1 $formatter && git add "*.$target_extension"
